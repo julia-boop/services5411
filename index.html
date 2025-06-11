@@ -55,6 +55,41 @@
 
     footer { text-align: center; margin-top: 32px; color: #888; font-size: 0.9rem; }
     footer img { max-height: 50px; margin-top: 16px; }
+
+    .additional-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .additional-details-section {
+    flex: 1 1 45%;  /* ensures both sections take ~50% width with some gap */
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .additional-details-section h3 {
+    color: #003366;
+    margin-top: 0;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
   </style>
 </head>
 <body>
@@ -70,9 +105,9 @@
     <div class="introduction">
       <p>Thank you for your interest in 5411 Distribution. We are confident that we are able to provide you the service that you need.</p>
       <p>At 5411 Distribution, we ensure seamless management of your shipments—from the moment they are delivered to our warehouse until the orders are shipped out. We also handle stock management and potential returns with care and precision.</p>
-      <p>UPS is our preferred courier, but we can accommodate other options, including FedEx, DHL, USPS, or any other suggestions you may have. We offer guaranteed 2nd Day shipping within the U.S. for boutiques at a special rate. Insurance for shipped orders will be decided upon by (BRAND NAME).</p>
-      <p>Our logistics and fulfillment services are available to (BRAND NAME) across North, Central, and South America, as needed. We work closely with our clients to customize services based on their unique requirements. For example, we will collaborate with (BRAND NAME) to establish a shipping procedure that aligns with your packaging preferences.</p>
-      <p>Before shipments are delivered to our warehouse, (BRAND NAME) must provide a detailed packing list. Upon receipt, 5411 will verify quantities against the packing list, and any discrepancies will be promptly communicated.</p>
+      <p>UPS is our preferred courier, but we can accommodate other options, including FedEx, DHL, USPS, or any other suggestions you may have. We offer guaranteed 2nd Day shipping within the U.S. for boutiques at a special rate. Insurance for shipped orders will be decided upon by CLIENT.</p>
+      <p>Our logistics and fulfillment services are available to CLIENT across North, Central, and South America, as needed. We work closely with our clients to customize services based on their unique requirements. For example, we will collaborate with CLIENT to establish a shipping procedure that aligns with your packaging preferences.</p>
+      <p>Before shipments are delivered to our warehouse, CLIENT must provide a detailed packing list. Upon receipt, 5411 will verify quantities against the packing list, and any discrepancies will be promptly communicated.</p>
     </div>
 
     <!-- Core Services -->
@@ -150,7 +185,13 @@
               <li><label><input type="checkbox" name="services" value="Handling rush orders" /> Handling rush orders</label></li>
               <li><label><input type="checkbox" name="services" value="Printing invoices or other inserts to include with shipments" /> Printing invoices or other inserts to include with shipments</label></li>
               <li><label><input type="checkbox" name="services" value="Managing returns" /> Managing returns (inspection and reporting)</label></li>
-            </ul>    
+          </ul>    
+          <h4>B2C</h4>
+          <ul class="services-list">
+              <li><label><input type="checkbox" name="services" value="Sell in the US" /> Do you sell in the US?</label></li>
+              <li><label><input type="checkbox" name="services" value="Sales platforms B2C" /> Do you work with any sales platform? (Shopify, Amazon, etc.)</label></li>
+              <li><label><input type="checkbox" name="services" value="Dropship" /> Do you dropship?</label></li>
+          </ul>    
       </div>
 
       <div class="section" id="additional">
@@ -175,13 +216,42 @@
         <p>Invoicing: Issued at the end of each month.</p>
       </div>
       
-      <div class="section" id="additional-info-needed">
-        <h2>Additional Information Needed</h2>
-        <ul>
-          <li>Average wholesale garment value</li>
-          <li>Estimated sales quantity for the next year</li>
-        </ul>
+      <div class="additional-details-container">
+        <!-- B2B Section -->
+        <div class="additional-details-section">
+          <h3>B2B Additional Details</h3>
+          <div class="form-group">
+            <label for="b2b-wholesale-value">Avg. Wholesale Garment Value</label>
+            <input type="text" id="b2b-wholesale-value" name="b2b-wholesale-value">
+          </div>
+          <div class="form-group">
+            <label for="b2b-sales-volume">Estimated Monthly Sales Volume</label>
+            <input type="text" id="b2b-sales-volume" name="b2b-sales-volume">
+          </div>
+          <div class="form-group">
+            <label for="b2b-comments">Additional Comments</label>
+            <textarea id="b2b-comments" name="b2b-comments" rows="4"></textarea>
+          </div>
+        </div>
+      
+        <!-- B2C Section -->
+        <div class="additional-details-section">
+          <h3>B2C Additional Details</h3>
+          <div class="form-group">
+            <label for="b2c-wholesale-value">Avg. Wholesale Garment Value</label>
+            <input type="text" id="b2c-wholesale-value" name="b2c-wholesale-value">
+          </div>
+          <div class="form-group">
+            <label for="b2c-sales-volume">Estimated Monthly Sales Volume</label>
+            <input type="text" id="b2c-sales-volume" name="b2c-sales-volume">
+          </div>
+          <div class="form-group">
+            <label for="b2c-comments">Additional Comments</label>
+            <textarea id="b2c-comments" name="b2c-comments" rows="4"></textarea>
+          </div>
+        </div>
       </div>
+      
   </div>
   
 
@@ -216,7 +286,8 @@
         { title: 'Warehouse', selector: '#services h4:nth-of-type(2) + ul' },
         { title: 'Outbound', selector: '#services h4:nth-of-type(3) + ul' },
         { title: 'Back-office', selector: '#services h4:nth-of-type(4) + ul' },
-        { title: 'Operation', selector: '#services h4:nth-of-type(5) + ul' }
+        { title: 'Operation', selector: '#services h4:nth-of-type(5) + ul' },
+        { title: 'B2C', selector: '#services h4:nth-of-type(6) + ul' }
         ];
 
         // Build the services HTML

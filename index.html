@@ -191,7 +191,7 @@
               <li><label><input type="checkbox" name="services" value="Sell in the US" /> Do you sell in the US?</label></li>
               <li><label><input type="checkbox" name="services" value="Sales platforms B2C" /> Do you work with any sales platform? (Shopify, Amazon, etc.)</label></li>
               <li><label><input type="checkbox" name="services" value="Dropship" /> Do you dropship?</label></li>
-              <li><label>Estimated monthly returns volume: <input type="number" name="services" value="returns" style="margin-left: 5px; width: 50px;"/> </label></li>
+              <li><label>Estimated monthly returns volume: <input type="number" name="services" style="margin-left: 5px; width: 50px;"/> </label></li>
           </ul>    
       </div>
 
@@ -296,15 +296,18 @@
         });
 
         const formData = {
-        company: form.company.value,
-        contact: form.contact.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        wholesale_val: form.wholesale_val.value,
-        sales_vol: form.sales_vol.value,
-        comments: form.comments.value,
-        services: servicesHTML
-        };
+          company: form.company.value,
+          contact: form.contact.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          b2b_wholesale_val: form['b2b-wholesale-value'].value,
+          b2b_sales_vol: form['b2b-sales-volume'].value,
+          b2b_comments: form['b2b-comments'].value,
+          b2c_wholesale_val: form['b2c-wholesale-value'].value,
+          b2c_sales_vol: form['b2c-sales-volume'].value,
+          b2c_comments: form['b2c-comments'].value,
+          services: servicesHTML
+      };
 
     
         // Send email using EmailJS

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5411 Services Request Form</title>
+  <link rel="icon" href="HeadLogo.png" type="image/png" />
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: #333; background: #f9f9f9; }
+    header { background: #0a3351; color: #fff; padding: 16px; text-align: center; }
+    header img { max-height: 80px; }
+    header h1 { margin: 8px 0 0 0; font-size: 1.8rem; }
+
+    .container { max-width: 800px; margin: 24px auto; background: #fff; padding: 32px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+    .section { margin-bottom: 24px; }
+    .section h2 { font-size: 1.4rem; border-bottom: 2px solid #0a3351; padding-bottom: 8px; margin-bottom: 16px; color: #f6b900; }
+
+    .introduction, .core-services {
+      background: #f0f8ff;
+      padding: 16px;
+      border-left: 4px solid #0a3351;
+      margin-bottom: 24px;
+    }
+    .introduction p, .core-services p {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+    .core-services ul { list-style: disc; margin-left: 20px; }
+    .core-services ul li { margin: 6px 0; }
+
+    label { display: block; margin-bottom: 8px; font-weight: bold; color: #0a3351; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: calc(100% - 16px); padding: 8px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 4px;
+      font-size: 1rem;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+
+    .services-list { list-style: none; padding: 0; margin: 0; }
+    .services-list li { margin-bottom: 8px; }
+    .services-list label { font-weight: normal; display: flex; align-items: center; }
+    .services-list input[type="checkbox"] { margin-right: 8px; transform: scale(1.2); }
+
+    button.submit-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      font-size: 1.1rem;
+      color: #fff;
+      background: #f6b900;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button.submit-btn:hover { background: #d4a100; }
+
+    footer { text-align: center; margin-top: 32px; color: #888; font-size: 0.9rem; }
+    footer img { max-height: 50px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo2.png" alt="5411 Logo" />
+    <h1>5411 Distribution</h1>
+    <p>Your success is our mission</p>
+  </header>
+
+  <div class="container">
+    <!-- Introduction Text -->
+    <div class="introduction">
+      <p>Thank you for your interest in 5411 Distribution. We are confident that we are able to provide you the service that you need.</p>
+      <p>At 5411 Distribution, we ensure seamless management of your shipments—from the moment they are delivered to our warehouse until the orders are shipped out. We also handle stock management and potential returns with care and precision.</p>
+      <p>UPS is our preferred courier, but we can accommodate other options, including FedEx, DHL, USPS, or any other suggestions you may have. We offer guaranteed 2nd Day shipping within the U.S. for boutiques at a special rate. Insurance for shipped orders will be decided upon by (BRAND NAME).</p>
+      <p>Our logistics and fulfillment services are available to (BRAND NAME) across North, Central, and South America, as needed. We work closely with our clients to customize services based on their unique requirements. For example, we will collaborate with (BRAND NAME) to establish a shipping procedure that aligns with your packaging preferences.</p>
+      <p>Before shipments are delivered to our warehouse, (BRAND NAME) must provide a detailed packing list. Upon receipt, 5411 will verify quantities against the packing list, and any discrepancies will be promptly communicated.</p>
+    </div>
+
+    <!-- Core Services -->
+    <div class="core-services">
+      <h2>Core Services Included</h2>
+      <p>The following services are included in the standard fee and are available to all clients as part of our comprehensive fulfillment package:</p>
+      <ul>
+        <li>Receiving shipments (on pallets or boxes).</li>
+        <li>Verifying packing lists against received items by scanning each garment.</li>
+        <li>Six months of complimentary storage for wholesale, canceled orders, returns, or advance shipments.</li>
+        <li>Creating shipping labels for outbound orders.</li>
+        <li>Resolving shipment delays through prompt communication with couriers or freight forwarders.</li>
+        <li>Dedicated account management for your brand.</li>
+        <li>Fast turnarounds.</li>
+        <li>WMS Access: Full traceability of stock and daily shipping updates with tracking numbers.</li>
+        <li>Daily email summaries of shipped orders and tracking details.</li>
+      </ul>
+    </div>
+
+    <form id="service-form">
+      <div class="section" id="client-info">
+        <h2>Client Information</h2>
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" required />
+
+        <label for="contact">Contact Person</label>
+        <input type="text" id="contact" name="contact" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+
+      <div class="section" id="services">
+        <h2>Optional Services</h2>
+        <h4>Inboud</h4>
+        <ul class="services-list">
+          <li><label><input type="checkbox" name="services" value="Revising polybag or tag labels" /> Revising polybag or tag labels (garments without barcodes)</label></li>
+          <li><label><input type="checkbox" name="services" value="Scanning each unit" /> Scanning each unit (garments with barcodes)</label></li>
+          <li><label><input type="checkbox" name="services" value="Product quality checks" /> Product quality checks (stains, damages)</label></li>
+        </ul>
+        <h4>Warehouse</h4>
+        <ul class="services-list">  
+          <li><label><input type="checkbox" name="services" value="Inventory cycle counts" /> Inventory cycle counts</label></li>
+          <li><label><input type="checkbox" name="services" value="Overstock storage" /> Overstock storage (+6 months)</label></li>
+          <li><label><input type="checkbox" name="services" value="Consolidation & dispatch" /> Consolidation & dispatching stock back to headquarters</label></li>
+          <li><label><input type="checkbox" name="services" value="Scraping obsolete stock" /> Scraping obsolete stock</label></li>
+          <li><label><input type="checkbox" name="services" value="Relabeling" /> Relabeling</label></li>
+        </ul>
+        <h4>Outbound</h4>
+        <ul class="services-list">
+            
+          <li><label><input type="checkbox" name="services" value="Break down bulk shipments" /> Preparing bulk shipments and breaking them down into individual orders (Pick and Pack)</label></li>  
+          <li><label><input type="checkbox" name="services" value="Cross-docking" /> Cross-docking</label></li>
+          <li><label><input type="checkbox" name="services" value="Shipping boutiques" /> Shipping to Boutiques</label></li>
+          <li><label><input type="checkbox" name="services" value="Shipping majors" /> Shipping to majors</label></li>
+        </ul>
+        <h4>Back-office</h4>
+        <ul class="services-list">
+            <li><label><input type="checkbox" name="services" value="Managing customer service for US clients (order approval)" /> Managing customer service for (BRAND NAME)’s US clients (order approval)</label></li>
+            <li><label><input type="checkbox" name="services" value="Ordering Labels" /> Ordering: Labels</label></li>
+            <li><label><input type="checkbox" name="services" value="Ordering Hangers" /> Ordering: Hangers</label></li>
+            <li><label><input type="checkbox" name="services" value="Ordering Tickets" /> Ordering: Tickets</label></li>
+            <li><label><input type="checkbox" name="services" value="EDI services (routing, ASN, invoicing, carton labeling)" />EDI services (routing, ASN, invoicing, carton labeling)</label></li>
+            <li><label><input type="checkbox" name="services" value="Handle credit card charges" /> Handle credit card charges</label></li>
+            <li><label><input type="checkbox" name="services" value="Customer invoicing" /> Customer invoicing</label></li>
+            <li><label><input type="checkbox" name="services" value="Merchant Service" /> Merchant Service</label></li>
+            <li><label><input type="checkbox" name="services" value="Access to bank account" /> Access to bank account</label></li>
+            <li><label><input type="checkbox" name="services" value="ERP & Store Integrations" /> ERP & Store Integrations</label></li>
+          </ul>         
+          <h4>Operation</h4>
+          <ul class="services-list">
+              <li><label><input type="checkbox" name="services" value="Handling rush orders" /> Handling rush orders</label></li>
+              <li><label><input type="checkbox" name="services" value="Printing invoices or other inserts to include with shipments" /> Printing invoices or other inserts to include with shipments</label></li>
+              <li><label><input type="checkbox" name="services" value="Managing returns" /> Managing returns (inspection and reporting)</label></li>
+            </ul>    
+      </div>
+
+      <div class="section" id="additional">
+        <h2>Additional Details</h2>
+        <label for="wholesale-val">Avg. Wholesale Garment Value</label>
+        <input type="text" id="wholesale-val" name="wholesale_val" />
+
+        <label for="sales-vol">Estimated Monthly Sales Volume</label>
+        <input type="text" id="sales-vol" name="sales_vol" />
+
+        <label for="comments">Additional Comments</label>
+        <textarea id="comments" name="comments"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Request</button>
+    </form>
+    <div class="section" id="financial-details">
+        <h2>Financial Details</h2>
+        <p>Payment will be based solely on orders that have been shipped.</p>
+        <p>Fee: % of the wholesale invoice value of shipped goods according to services requested.</p>
+        <p>Payment terms: Net 30.</p>
+        <p>Invoicing: Issued at the end of each month.</p>
+      </div>
+      
+      <div class="section" id="additional-info-needed">
+        <h2>Additional Information Needed</h2>
+        <ul>
+          <li>Average wholesale garment value</li>
+          <li>Estimated sales quantity for the next year</li>
+        </ul>
+      </div>
+  </div>
+  
+
+  <footer>
+    <p>© 2025 5411 Distribution — Dallas, TX</p>
+    <img src="Logo.png" alt="5411 Small Logo" />
+  </footer>
+
+  <script>
+    document.getElementById('service-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks! Your service request has been submitted.');
+      // TODO: submit via fetch() to your API or form endpoint
+    });
+  </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        // Initialize EmailJS with your Public Key
+        emailjs.init("m4DEmWmDuHWCcQrXD");
+      })();
+    
+      document.getElementById('service-form').addEventListener('submit', function(e){
+        e.preventDefault();
+    
+        // Collect form data
+        const form = this;
+
+        // Define sections with their corresponding CSS selectors
+        const sections = [
+        { title: 'Inbound', selector: '#services h4:nth-of-type(1) + ul' },
+        { title: 'Warehouse', selector: '#services h4:nth-of-type(2) + ul' },
+        { title: 'Outbound', selector: '#services h4:nth-of-type(3) + ul' },
+        { title: 'Back-office', selector: '#services h4:nth-of-type(4) + ul' },
+        { title: 'Operation', selector: '#services h4:nth-of-type(5) + ul' }
+        ];
+
+        // Build the services HTML
+        let servicesHTML = '';
+
+        sections.forEach(section => {
+        const ul = form.querySelector(section.selector);
+        const checkedItems = ul ? Array.from(ul.querySelectorAll('input[name="services"]:checked')) : [];
+        
+        if (checkedItems.length > 0) {
+            servicesHTML += `<strong>${section.title}</strong><ul>`;
+            checkedItems.forEach(item => {
+            servicesHTML += `<li>${item.value}</li>`;
+            });
+            servicesHTML += '</ul>';
+        }
+        });
+
+        const formData = {
+        company: form.company.value,
+        contact: form.contact.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        wholesale_val: form.wholesale_val.value,
+        sales_vol: form.sales_vol.value,
+        comments: form.comments.value,
+        services: servicesHTML
+        };
+
+    
+        // Send email using EmailJS
+        emailjs.send("service_84ezp7o", "template_y54ox44", formData)
+          .then(function(response) {
+            alert('Your service request has been sent successfully!');
+            form.reset(); // Optional: reset the form after sending
+          }, function(error) {
+            alert('Oops! Something went wrong. Please try again later.');
+            console.error('EmailJS error:', error);
+          });
+      });
+    </script>
+    
+</body>
+</html>

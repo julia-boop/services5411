@@ -90,6 +90,28 @@
     padding: 8px;
     box-sizing: border-box;
   }
+
+  .services-list li {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-list li > label {
+  margin-bottom: 6px;
+  color: #0a3351;
+}
+
+.services-list input[type="text"],
+.services-list input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
   </style>
 </head>
 <body>
@@ -189,8 +211,21 @@
           <h4>B2C</h4>
           <ul class="services-list">
               <li><label><input type="checkbox" name="services" value="Sell in the US" /> Do you sell in the US?</label></li>
-              <li><label><input type="checkbox" name="services" value="Sales platforms B2C" /> Do you work with any sales platform? (Shopify, Amazon, etc.)</label></li>
-              <li><label><input type="checkbox" name="services" value="Dropship" /> Do you dropship?</label></li>
+              <li>
+                <label>
+                  <input type="checkbox" name="services" value="Sales platforms B2C" />
+                  Do you work with any sales platform? (Shopify, Amazon, etc.)
+                </label>
+                <input type="text" name="platforms" placeholder="If so, please specify..." />
+              </li>
+            
+              <li>
+                <label>
+                  <input type="checkbox" name="services" value="Dropship" />
+                  Do you dropship?
+                </label>
+                <input type="text" name="dropship-retailers" placeholder="If so, which retailers do you work with?" />
+              </li>
               <li><label>Estimated monthly returns volume: <input type="number" name="services" style="margin-left: 5px; width: 50px;"/> </label></li>
           </ul>    
       </div>

@@ -112,6 +112,36 @@
   font-size: 1rem;
 }
 
+.services-list li {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-list li > label {
+  font-weight: normal;
+  color: #0a3351;
+  margin-bottom: 6px;
+}
+
+.services-list input[type="text"],
+.services-list input[type="number"],
+.services-list textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.services-list input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+}
+
+
   </style>
 </head>
 <body>
@@ -213,10 +243,10 @@
               <li><label><input type="checkbox" name="services" value="Sell in the US" /> Do you sell in the US?</label></li>
               <li>
                 <label>
-                  <input type="checkbox" name="services" value="Sales platforms B2C" />
+                  <input type="checkbox" name="sales-platform-b2c" value="Sales platforms B2C" />
                   Do you work with any sales platform? (Shopify, Amazon, etc.)
                 </label>
-                <input type="text" name="platforms" placeholder="If so, please specify..." />
+                <input type="text" name="which-sales-platform-b2c" placeholder="If so, please specify..." />
               </li>
             
               <li>
@@ -226,6 +256,42 @@
                 </label>
                 <input type="text" name="dropship-retailers" placeholder="If so, which retailers do you work with?" />
               </li>
+              <li>
+                <label>
+                  Approximate number of SKUs:
+                  <input type="number" name="approx-sku" placeholder="e.g. 150" />
+                </label>
+              </li>
+              
+              <li>
+                <label>
+                  Do you have a peak season?
+                  <input type="text" name="peak-season" placeholder="If yes, when?" />
+                </label>
+              </li>
+              
+              <li>
+                <label>
+                  Do you have special packaging requirements?
+                  <textarea name="packaging-requirements" placeholder="Describe any packaging needs..."></textarea>
+                </label>
+              </li>
+              
+              <li>
+                <label>
+                  Do you work with pre-orders?
+                  <input type="checkbox" name="preorders" />
+                </label>
+              </li>
+              
+              <li>
+                <label>
+                  Do you use a return platform?
+                  <input type="checkbox" name="returns-platform" />
+                </label>
+                <input type="text" name="which-return-platform" placeholder="If yes, which one?" />
+              </li>
+              
               <li><label>Estimated monthly returns volume: <input type="number" name="services" style="margin-left: 5px; width: 50px;"/> </label></li>
           </ul>    
       </div>
@@ -341,8 +407,21 @@
           b2c_wholesale_val: form['b2c-wholesale-value'].value,
           b2c_sales_vol: form['b2c-sales-volume'].value,
           b2c_comments: form['b2c-comments'].value,
+
+          // NEW B2C fields
+          b2c_sku_qty: form['approx-sku'].value,
+          b2c_peak_season: form['peak-season'].value,
+          b2c_packaging: form['packaging-requirements'].value,
+          b2c_preorders: form['preorders'].checked ? 'Si' : 'No',
+          b2c_returns_platform: form['returns-platform'].checked ? 'Si' : 'No',
+          b2c_which_returns_platform: form['which-return-platform'].value,
+          b2c_sales_platform: form['sales-platform-b2c'].checked ? 'Si' : 'No',
+          b2c_which_sales_platform: form['which-sales-platform-b2c'].value,
+
+
           services: servicesHTML
-      };
+        };
+
 
     
         // Send email using EmailJS

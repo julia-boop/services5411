@@ -23,7 +23,7 @@ EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
 # --- Google Sheets setup ---
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 service_account_info = json.loads(os.getenv("GOOGLE_CREDENTIALS"))
-creds = Credentials.from_service_account_file(service_account_info, scopes=SCOPES)
+creds = Credentials.from_service_account_info(service_account_info, scopes=SCOPES)
 client = gspread.authorize(creds)
 spreadsheet = client.open_by_key(SHEET_ID)
 sheet = spreadsheet.worksheet("Form Data")  

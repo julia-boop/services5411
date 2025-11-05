@@ -14,7 +14,9 @@ COPY requirements.txt .
 COPY index.html .
 COPY styles.css .
 COPY script.js .
-COPY .env .env
+COPY Logo.png .
+COPY Logo2.png .
+COPY HeadLogo.png .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt

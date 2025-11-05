@@ -45,8 +45,12 @@ def create_summary(data_dict):
     if safe_title in existing_titles:
         spreadsheet.del_worksheet(spreadsheet.worksheet(safe_title))
 
-    filtered_data = {k: v for k, v in data_dict.items() if v and str(v).strip().lower() != "no" | str(v).strip().lower() != ""}
-
+    filtered_data = {
+        k: v
+        for k, v in data_dict.items()
+        if v and (str(v).strip().lower() != "no" and str(v).strip().lower() != "")
+    }
+    
     new_ws = spreadsheet.add_worksheet(title=safe_title, rows=len(filtered_data) + 5, cols=3)
     new_ws.update("A1", [["Field", "Value"]])
     rows = [[key.replace("_", " ").title(), str(value)] for key, value in filtered_data.items()]

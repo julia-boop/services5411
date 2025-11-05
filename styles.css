@@ -1,0 +1,394 @@
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: #333; background: #f9f9f9; }
+    header { background: #0a3351; color: #fff; padding: 16px; text-align: center; }
+    header img { max-height: 80px; }
+    header h1 { margin: 8px 0 0 0; font-size: 1.8rem; }
+    h4 {text-align: center; font-size: large;}
+
+    .container { max-width: 800px; margin: 24px auto; background: #fff; padding: 32px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+    .section { margin-bottom: 24px; }
+    .section h2 { font-size: 1.4rem; border-bottom: 2px solid #0a3351; padding-bottom: 8px; margin-bottom: 16px; color: #f6b900; }
+
+    .introduction, .core-services {
+      background: #f0f8ff;
+      padding: 16px;
+      border-left: 4px solid #0a3351;
+      margin-bottom: 24px;
+    }
+    .introduction p, .core-services p {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+    .core-services ul { list-style: disc; margin-left: 20px; }
+    .core-services ul li { margin: 6px 0; }
+
+    label { display: block; margin-bottom: 8px; margin-top: 8px; font-weight: bold; color: #0a3351; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: calc(100% - 16px); padding: 8px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 4px;
+      font-size: 1rem;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+
+    .services-list { list-style: none; padding: 0; margin: 0; }
+    .services-list li { margin-bottom: 8px; }
+    .services-list label { font-weight: normal; display: flex; align-items: center; justify-content: center;}
+    .services-list input[type="checkbox"] { margin-right: 8px; transform: scale(1.2); }
+
+    button.submit-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      font-size: 1.1rem;
+      color: #fff;
+      background: #f6b900;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button.submit-btn:hover { background: #d4a100; }
+
+    footer { text-align: center; margin-top: 32px; color: #888; font-size: 0.9rem; }
+    footer img { max-height: 50px; margin-top: 16px; }
+
+    .additional-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .additional-details-section {
+    flex: 1 1 45%;  /* ensures both sections take ~50% width with some gap */
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .additional-details-section h3 {
+    color: #003366;
+    margin-top: 0;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .services-list li {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-list li > label {
+  margin-bottom: 6px;
+  color: #0a3351;
+}
+
+.services-list input[type="text"],
+.services-list input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.services-list li {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-list li > label {
+  font-weight: normal;
+  color: #0a3351;
+  margin-bottom: 6px;
+}
+
+.services-list input[type="text"],
+.services-list input[type="number"],
+.services-list textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.services-list input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+}
+
+.switch-group {
+  flex: 1 1 calc(33.33% - 20px);  /* three per row, adjusts dynamically */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ensures same vertical spacing */
+  min-height: 140px;              /* consistent height */
+  text-align: center;
+}
+
+.switch-group p {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 6px;
+  background-color: #f4f4f4;
+  width: 100%;
+  max-width: 100px;     /* keeps toggle reasonable size */
+  margin: 0 auto;   
+}
+
+.switch-container input[type="radio"] {
+  display: none;
+}
+
+.switch {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: small;
+}
+
+.switch.yes, .switch.no {
+  background-color: transparent;
+  color: #444;
+}
+
+.switch-container input[type="radio"]:checked + .switch {
+  background-color: #0a3351;
+  color: #fff;
+  font-weight: bold;
+}
+
+.switch:hover {
+  background-color: #e1e1e1;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;                /* allows wrapping if screen is narrow */
+  justify-content: space-between; /* space between items */
+  align-items: stretch;           /* equal height */
+  width: 100%;
+  gap: 20px;     
+}
+
+/* General grid layout for all service sections */
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Each option box */
+.switch-group {
+  flex: 1 1 calc(33.33% - 20px);  /* three per row by default */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.switch-group p {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* Switch container styling */
+.switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 6px;
+  background-color: #f4f4f4;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Hide native radios */
+.switch-container input[type="radio"] {
+  display: none;
+}
+
+/* Switch buttons */
+.switch {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* Neutral */
+.switch.yes, .switch.no {
+  background-color: transparent;
+  color: #444;
+}
+
+/* Selected */
+.switch-container input[type="radio"]:checked + .switch {
+  background-color: #0a3351;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Hover effect */
+.switch:hover {
+  background-color: #e1e1e1;
+}
+
+/* ----- 📱 Responsive Breakpoints ----- */
+
+/* Two per row on medium screens (tablets) */
+@media (max-width: 900px) {
+  .switch-group {
+    flex: 1 1 calc(50% - 20px);
+    min-height: 140px;
+  }
+}
+
+/* One per row on small screens (mobile) */
+@media (max-width: 600px) {
+  .switch-group {
+    flex: 1 1 100%;
+    min-height: auto;
+  }
+
+  .switch-container {
+    max-width: 90%;
+  }
+}
+
+/* --- Tabs --- */
+.tab-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.tablist {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #0a3351;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background-color: #eee;
+}
+
+.tab-btn.active {
+  background-color: #0a3351;
+  color: #fff;
+}
+
+/* --- Tab content --- */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Clarification input hidden by default */
+.clarification {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 0;
+}
+
+/* When active (user clicked Yes) */
+.clarification.visible {
+  max-height: 120px;  /* enough for input or textarea */
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.clarification input,
+.clarification textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+#form-errors ul {
+  margin: 10px 0 0 20px;
+  list-style: disc;
+}

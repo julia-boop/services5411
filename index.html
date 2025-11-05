@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5411 Services Request Form</title>
+  <link rel="icon" href="HeadLogo.png" type="image/png" />
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <img src="Logo2.png" alt="5411 Logo" />
+    <h1>5411 Distribution</h1>
+    <p>Your success is our mission</p>
+  </header>
+
+  <div class="container">
+    <!-- Introduction Text -->
+    <div class="introduction">
+      <p>Thank you for your interest in 5411 Distribution. We are confident that we are able to provide you the service that you need.</p>
+      <p>At 5411 Distribution, we ensure seamless management of your shipments—from the moment they are delivered to our warehouse until the orders are shipped out. We also handle stock management and potential returns with care and precision.</p>
+      <p>UPS is our preferred courier, but we can accommodate other options, including FedEx, DHL, USPS, or any other suggestions you may have. We offer guaranteed 2nd Day shipping within the U.S. for boutiques at a special rate. Insurance for shipped orders will be decided upon by CLIENT.</p>
+      <p>Our logistics and fulfillment services are available to CLIENT across North, Central, and South America, as needed. We work closely with our clients to customize services based on their unique requirements. For example, we will collaborate with CLIENT to establish a shipping procedure that aligns with your packaging preferences.</p>
+      <p>Before shipments are delivered to our warehouse, CLIENT must provide a detailed packing list. Upon receipt, 5411 will verify quantities against the packing list, and any discrepancies will be promptly communicated.</p>
+    </div>
+
+    <!-- Core Services -->
+    <div class="core-services">
+      <h2>Core Services Included</h2>
+      <p>The following services are included in the standard fee and are available to all clients as part of our comprehensive fulfillment package:</p>
+      <ul>
+        <li>Receiving shipments (on pallets or boxes).</li>
+        <li>Verifying packing lists against received items by scanning each garment.</li>
+        <li>Six months of complimentary storage for wholesale, canceled orders, returns, or advance shipments.</li>
+        <li>Creating shipping labels for outbound orders.</li>
+        <li>Resolving shipment delays through prompt communication with couriers or freight forwarders.</li>
+        <li>Dedicated account management for your brand.</li>
+        <li>Fast turnarounds.</li>
+        <li>WMS Access: Full traceability of stock and daily shipping updates with tracking numbers.</li>
+        <li>Daily email summaries of shipped orders and tracking details.</li>
+      </ul>
+    </div>
+
+    <form id="service-form" novalidate>
+      <div class="section" id="client-info">
+        <h2>Client Information</h2>
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" required />
+
+        <label for="contact">Contact Person</label>
+        <input type="text" id="contact" name="contact" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+
+      <div class="section" id="services">
+        <h2>Optional Services</h2>
+        <h4>Inbound</h4>
+        <div class="inbound services-list">
+          <div class="switch-group">
+            <p>Revising polybag or tag labels (garments without barcodes)</p>
+            <div class="switch-container">
+              <input type="radio" id="revising-yes" name="inbound_polybag" value="Yes" required>
+              <label for="revising-yes" class="switch yes">Yes</label>
+              <input type="radio" id="revising-no" name="inbound_polybag" value="No" required>
+              <label for="revising-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+          <p>Scanning each unit</p>
+            <div class="switch-container">
+              <input type="radio" id="scanning-yes" name="inbound_scanning" value="Yes" required>
+              <label for="scanning-yes" class="switch yes">Yes</label>              
+              <input type="radio" id="scanning-no" name="inbound_scanning" value="No" required>
+              <label for="scanning-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Product quality checks (stains, damages)</p>
+            <div class="switch-container">
+              <input type="radio" id="quality-yes" name="inbound_qualitycheck" value="Yes" required>
+              <label for="quality-yes" class="switch yes">Yes</label>              
+              <input type="radio" id="quality-no" name="inbound_qualitycheck" value="No" required>
+              <label for="quality-no" class="switch no">No</label>
+            </div>
+          </div>
+        </div>
+        <h4>Warehouse</h4>
+        <div class="warehouse services-list">  
+          <div class="switch-group">
+            <p>Inventory Cycle Counts</p>
+            <div class="switch-container">
+              <input type="radio" id="cyclecount-yes" name="wh_cyclecount" value="Yes" required>
+              <label for="cyclecount-yes" class="switch yes">Yes</label>
+              <input type="radio" id="cyclecount-no" name="wh_cyclecount" value="No" required>
+              <label for="cyclecount-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Over Stock Storage</p>
+            <div class="switch-container">
+              <input type="radio" id="overstock-yes" name="wh_overstock" value="Yes" required>
+              <label for="overstock-yes" class="switch yes">Yes</label>
+              <input type="radio" id="overstock-no" name="wh_overstock" value="No" required>
+              <label for="overstock-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Consolidation & dispatching stock back to headquarters</p>
+            <div class="switch-container">
+              <input type="radio" id="headquarter-yes" name="wh_headquarters" value="Yes" required>
+              <label for="headquarter-yes" class="switch yes">Yes</label>
+              <input type="radio" id="headquarter-no" name="wh_headquarters" value="No" required>
+              <label for="headquarter-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Scraping obsolete stock</p>
+            <div class="switch-container">
+              <input type="radio" id="scraping-yes" name="wh_scraping" value="Yes" required>
+              <label for="scraping-yes" class="switch yes">Yes</label>
+              <input type="radio" id="scraping-no" name="wh_scraping" value="No" required>
+              <label for="scraping-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Relabeling</p>
+            <div class="switch-container">
+              <input type="radio" id="relabel-yes" name="wh_relabel" value="Yes" required>
+              <label for="relabel-yes" class="switch yes">Yes</label>
+              <input type="radio" id="relabel-no" name="wh_relabel" value="No" required>
+              <label for="relabel-no" class="switch no">No</label>
+            </div>
+          </div>
+        </div>
+        <h4>Outbound</h4>
+        <div class="outbound services-list">
+          <div class="switch-group">
+            <p>Pick and Pack</p>
+            <div class="switch-container">
+              <input type="radio" id="pickpack-yes" name="outbound_pickpack" value="Yes" required>
+              <label for="pickpack-yes" class="switch yes">Yes</label>
+              <input type="radio" id="pickpack-no" name="outbound_pickpack" value="No" required>
+              <label for="pickpack-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Cross-Docking</p>
+            <div class="switch-container">
+              <input type="radio" id="crossdock-yes" name="outbound_crossdock" value="Yes" required>
+              <label for="crossdock-yes" class="switch yes">Yes</label>
+              <input type="radio" id="crossdock-no" name="outbound_crossdock" value="No" required>
+              <label for="crossdock-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Shipping to Boutiques</p>
+            <div class="switch-container">
+              <input type="radio" id="boutiques-yes" name="outbound_boutiques" value="Yes" required>
+              <label for="boutiques-yes" class="switch yes">Yes</label>
+              <input type="radio" id="boutiques-no" name="outbound_boutiques" value="No" required>
+              <label for="boutiques-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Shipping to Majors</p>
+            <div class="switch-container">
+              <input type="radio" id="majors-yes" name="outbound_majors" value="Yes" required>
+              <label for="majors-yes" class="switch yes">Yes</label>
+              <input type="radio" id="majors-no" name="outbound_majors" value="No" required>
+              <label for="majors-no" class="switch no">No</label>
+            </div>
+          </div>
+        </div>
+        <h4>Back-office</h4>
+        <div class="back services-list">
+            <div class="switch-group">
+            <p>Managing customer service for brand's US clients</p>
+            <div class="switch-container">
+              <input type="radio" id="customerservice-yes" name="back_customerservice" value="Yes" required>
+              <label for="customerservice-yes" class="switch yes">Yes</label>
+              <input type="radio" id="customerservice-no" name="back_customerservice" value="No" required>
+              <label for="customerservice-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Ordering: Labels</p>
+            <div class="switch-container">
+              <input type="radio" id="labels-yes" name="back_labels" value="Yes" required>
+              <label for="labels-yes" class="switch yes">Yes</label>
+              <input type="radio" id="labels-no" name="back_labels" value="No" required>
+              <label for="labels-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Ordering: Hangers</p>
+            <div class="switch-container">
+              <input type="radio" id="hangers-yes" name="back_hangers" value="Yes" required>
+              <label for="hangers-yes" class="switch yes">Yes</label>
+              <input type="radio" id="hangers-no" name="back_hangers" value="No" required>
+              <label for="hangers-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Ordering: Tickets</p>
+            <div class="switch-container">
+              <input type="radio" id="tickets-yes" name="back_tickets" value="Yes" required>
+              <label for="tickets-yes" class="switch yes">Yes</label>
+              <input type="radio" id="tickets-no" name="back_tickets" value="No" required>
+              <label for="tickets-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>EDI services (routing, ASN, invoicing, carton labeling)</p>
+            <div class="switch-container">
+              <input type="radio" id="edi-yes" name="back_edi" value="Yes" required>
+              <label for="edi-yes" class="switch yes">Yes</label>
+              <input type="radio" id="edi-no" name="back_edi" value="No" required>
+              <label for="edi-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Handle credit card charges</p>
+            <div class="switch-container">
+              <input type="radio" id="cc-yes" name="back_cccharges" value="Yes" required>
+              <label for="cc-yes" class="switch yes">Yes</label>
+              <input type="radio" id="cc-no" name="back_cccharges" value="No" required>
+              <label for="cc-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Customer invoicing</p>
+            <div class="switch-container">
+              <input type="radio" id="invoice-yes" name="back_invoice" value="Yes" required>
+              <label for="invoice-yes" class="switch yes">Yes</label>
+              <input type="radio" id="invoice-no" name="back_invoice" value="No" required>
+              <label for="invoice-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Merchant service</p>
+            <div class="switch-container">
+              <input type="radio" id="merchant-yes" name="back_merchant" value="Yes" required>
+              <label for="merchant-yes" class="switch yes">Yes</label>
+              <input type="radio" id="merchant-no" name="back_merchant" value="No" required>
+              <label for="merchant-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>Access to bank account</p>
+            <div class="switch-container">
+              <input type="radio" id="bank-yes" name="back_bank" value="Yes" required>
+              <label for="bank-yes" class="switch yes">Yes</label>
+              <input type="radio" id="bank-no" name="back_bank" value="No" required>
+              <label for="bank-no" class="switch no">No</label>
+            </div>
+          </div>
+          <div class="switch-group">
+            <p>ERP & Store Integrations</p>
+            <div class="switch-container">
+              <input type="radio" id="erp-yes" name="back_erp" value="Yes" required>
+              <label for="erp-yes" class="switch yes">Yes</label>
+              <input type="radio" id="erp-no" name="back_erp" value="No" required>
+              <label for="erp-no" class="switch no">No</label>
+            </div>
+          </div>
+        </div>         
+          <h4>Operation</h4>
+          <div class="services-list">
+            <div class="switch-group">
+              <p>Handling rush orders</p>
+              <div class="switch-container">
+                <input type="radio" id="rush-yes" name="operation_rush" value="Yes" required>
+                <label for="rush-yes" class="switch yes">Yes</label>
+                <input type="radio" id="rush-no" name="operation_rush" value="No" required>
+                <label for="rush-no" class="switch no">No</label>
+              </div>
+            </div>
+            <div class="switch-group">
+              <p>Printing invoices or other inserts to include with shipments</p>
+              <div class="switch-container">
+                <input type="radio" id="insert-yes" name="operation_insert" value="Yes" required>
+                <label for="insert-yes" class="switch yes">Yes</label>
+                <input type="radio" id="insert-no" name="operation_insert" value="No" required>
+                <label for="insert-no" class="switch no">No</label>
+              </div>
+            </div>
+            <div class="switch-group">
+              <p>Managing returns (inspection and reporting)</p>
+              <div class="switch-container">
+                <input type="radio" id="returns-yes" name="operation_returns" value="Yes" required>
+                <label for="returns-yes" class="switch yes">Yes</label>
+                <input type="radio" id="returns-no" name="operation_returns" value="No" required>
+                <label for="returns-no" class="switch no">No</label>
+              </div>
+            </div>
+          </div>    
+          <div class="tab-container">
+            <div class="tablist">
+              <button type="button" class="tab-btn active" data-tab="b2c">B2C</button>
+              <button type="button" class="tab-btn" data-tab="b2b">B2B</button>
+              <button type="button" class="tab-btn" data-tab="both">Both</button>
+            </div>
+
+            <!-- B2C Section -->
+            <div class="tab-content active" id="b2c">
+              <h3>B2C</h3>
+              <div class="services-list">
+                <div class="switch-group">
+                  <p>Do you sell in the US?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="sellus-yes" name="b2c_sellus" value="Yes" required>
+                    <label for="sellus-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="sellus-no" name="b2c_sellus" value="No" required>
+                    <label for="sellus-no" class="switch no">No</label>
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you work with any sales platform? (Shopify, Amazon, etc.)</p>
+                  <div class="switch-container">
+                    <input type="radio" id="sales-yes" name="b2c_sales" value="Yes" required>
+                    <label for="sales-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="sales-no" name="b2c_sales" value="No" required>
+                    <label for="sales-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="b2c_sales_detail" placeholder="If yes, which one?" />
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you dropship?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="dropship-yes" name="b2c_dropship" value="Yes" required>
+                    <label for="dropship-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="dropship-no" name="b2c_dropship" value="No" required>
+                    <label for="dropship-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="b2c_dropship_detail" placeholder="If yes, which retailers do you work with?" />
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you have a peak season?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="peak-yes" name="b2c_peak" value="Yes" required>
+                    <label for="peak-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="peak-no" name="b2c_peak" value="No" required>
+                    <label for="peak-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="b2c_peak_detail" placeholder="If yes, when?" />
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you have special packaging requirements?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="packaging-yes" name="b2c_packaging" value="Yes" required>
+                    <label for="packaging-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="packaging-no" name="b2c_packaging" value="No" required>
+                    <label for="packaging-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="b2c_packaging_detail" placeholder="If yes, please describe..." />
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you work with preorders?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="preorders-yes" name="b2c_preorders" value="Yes" required>
+                    <label for="preorders-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="preorders-no" name="b2c_preorders" value="No" required>
+                    <label for="preorders-no" class="switch no">No</label>
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you use a return platform?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="return-yes" name="b2c_return" value="Yes" required>
+                    <label for="return-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="return-no" name="b2c_return" value="No" required>
+                    <label for="return-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="b2c_return_detail" placeholder="If yes, which one?" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Approximate number of returns per month</label>
+                <input type="number" name="b2c_returnsmonth" required/>
+              </div>
+              <div class="form-group">
+                <label>Average retail garment value (USD)</label>
+                <input type="number" name="b2c_value" required/>
+              </div>
+              <div class="form-group">
+                <label>Approximate number of SKUs</label>
+                <input type="number" name="b2c_skus" required/>
+              </div>
+              <div class="form-group">
+                <label>Average number of orders per month</label>
+                <input type="number" name="b2c_orders" required/>
+              </div>
+              <div class="form-group">
+                <label>Estimated monthly sales volume (USD)</label>
+                <input type="number" name="b2c_salesvol" required/>
+              </div>
+              <div class="form-group">
+                <label>Additional comments</label>
+                <textarea name="b2c_comments" rows="4"></textarea>
+              </div>
+            </div>
+
+            <!-- B2B Section -->
+            <div class="tab-content" id="b2b">
+              <h3>B2B</h3>
+              <div class="form-group">
+                <label>Average wholesale garment value (USD)</label>
+                <input type="number" name="b2b_value" required/>
+              </div>
+              <div class="form-group">
+                <label>Average number of units per order</label>
+                <input type="number" name="b2b_units" required/>
+              </div>
+              <div class="form-group">
+                <label>Estimated number of orders per month</label>
+                <input type="number" name="b2b_orders" required/>
+              </div>
+              <div class="form-group">
+                <label>Estimated monthly sales volume (USD)</label>
+                <input type="number" name="b2b_salesvol" required/>
+              </div>
+              <div class="form-group">
+                <label>Additional comments</label>
+                <textarea name="b2b_comments" rows="4"></textarea>
+              </div>
+            </div>
+
+            <!-- Both Section -->
+            <div class="tab-content" id="both">
+              <h3>B2B</h3>
+              <div class="form-group">
+                <label>Average wholesale garment value (USD)</label>
+                <input type="number" name="bothb2b_value" />
+              </div>
+              <div class="form-group">
+                <label>Average number of units per order</label>
+                <input type="number" name="bothb2b_units" />
+              </div>
+              <div class="form-group">
+                <label>Estimated number of orders per month</label>
+                <input type="number" name="bothb2b_sales" />
+              </div>
+              <div class="form-group">
+                <label>Estimated monthly sales volume (USD)</label>
+                <input type="number" name="botb2b_salesvol" required/>
+              </div>
+              <h3>B2C</h3>
+              <div class="services-list">
+                <div class="switch-group">
+                  <p>Do you sell in the US?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="bothsellus-yes" name="bothb2c_sellus" value="Yes" required>
+                    <label for="bothsellus-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="bothsellus-no" name="bothb2c_sellus" value="No" required>
+                    <label for="bothsellus-no" class="switch no">No</label>
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you work with any sales platform? (Shopify, Amazon, etc.)</p>
+                  <div class="switch-container">
+                    <input type="radio" id="bothsales-yes" name="bothb2c_sales" value="Yes" required>
+                    <label for="bothsales-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="bothsales-no" name="bothb2c_sales" value="No" required>
+                    <label for="bothsales-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="bothb2c_sales_detail" placeholder="If yes, which one?" />
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you have a peak season?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="bothpeak-yes" name="bothb2c_peak" value="Yes" required>
+                    <label for="bothpeak-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="bothpeak-no" name="bothb2c_peak" value="No" required>
+                    <label for="bothpeak-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="bothb2c_peak_detail" placeholder="If yes, when?" />
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you have special packaging requirements?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="bothpackaging-yes" name="bothb2c_packaging" value="Yes" required>
+                    <label for="bothpackaging-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="bothpackaging-no" name="bothb2c_packaging" value="No" required>
+                    <label for="bothpackaging-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="bothb2c_sales_detail" placeholder="If yes, please describe..." />
+                  </div>
+                </div>
+                <div class="switch-group">
+                  <p>Do you use a return platform?</p>
+                  <div class="switch-container">
+                    <input type="radio" id="bothreturn-yes" name="bothb2c_return" value="Yes" required>
+                    <label for="bothreturn-yes" class="switch yes">Yes</label>
+                    <input type="radio" id="bothreturn-no" name="bothb2c_return" value="No" required>
+                    <label for="bothreturn-no" class="switch no">No</label>
+                  </div>
+                  <div class="clarification hidden">
+                    <input type="text" name="bothb2c_sales_detail" placeholder="If yes, which one?" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Approximate number of SKUs</label>
+                <input type="number" name="bothb2c_skus" placeholder="e.g. 150" />
+              </div>
+              <div class="form-group">
+                <label>Average retail garment value (USD)</label>
+                <input type="number" name="bothb2c_value" placeholder="e.g. 150" />
+              </div>
+              <div class="form-group">
+                <label>Average number of orders per month</label>
+                <input type="number" name="bothb2c_orders" placeholder="e.g. 150" />
+              </div>
+              <div class="form-group">
+                <label>Estimated monthly sales volume (USD)</label>
+                <input type="number" name="botb2c_salesvol" required/>
+              </div>
+              <div class="form-group">
+                <label>Additional comments</label>
+                <textarea name="both_comments" rows="4"></textarea>
+              </div>
+            </div>
+          </div> 
+      </div>
+      
+      <button type="submit" class="submit-btn" id="submit-btn">Submit Request</button>
+    </form>
+    <div class="section" id="financial-details">
+        <h2>Financial Details</h2>
+        <p>Payment will be based solely on orders that have been shipped.</p>
+        <p>Fee: % of the wholesale invoice value of shipped goods according to services requested.</p>
+        <p>Payment terms: Net 30.</p>
+        <p>Invoicing: Issued at the end of each month.</p>
+      </div>
+  </div>
+  
+
+  <footer>
+    <p>© 2025 5411 Distribution — Dallas, TX</p>
+    <img src="Logo.png" alt="5411 Small Logo" />
+  </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
+    
+</body>
+</html>

@@ -37,27 +37,50 @@ def next_available_row_by_column(sheet, col_index=2):  # column B = 2
     col_values = sheet.col_values(col_index)
     return len(col_values) + 1
 
+def create_summary(data_dict):
+    company_name = data_dict.get("company", "Unnamed Company").strip() or "Unnamed"
+    safe_title = company_name[:99]  
+
+    existing_titles = [ws.title for ws in spreadsheet.worksheets()]
+    if safe_title in existing_titles:
+        spreadsheet.del_worksheet(spreadsheet.worksheet(safe_title))
+
+    filtered_data = {k: v for k, v in data_dict.items() if v and str(v).strip().lower() != "no" | str(v).strip().lower() != ""}
+
+    new_ws = spreadsheet.add_worksheet(title=safe_title, rows=len(filtered_data) + 5, cols=3)
+    new_ws.update("A1", [["Field", "Value"]])
+    rows = [[key.replace("_", " ").title(), str(value)] for key, value in filtered_data.items()]
+    new_ws.update("A2", rows)
+
+    new_ws.format("A1:B1", {
+        "backgroundColor": {"red": 0.04, "green": 0.26, "blue": 0.57},
+        "textFormat": {"bold": True, "foregroundColor": {"red": 1, "green": 1, "blue": 1}},
+    })
+    new_ws.format("A:B", {
+        "wrapStrategy": "WRAP",
+        "verticalAlignment": "TOP",
+    })
+    print(f"✅ Summary created for {safe_title}")
+
 # ✅ Handle form submission
 @app.route("/submit", methods=["POST"])
 def submit():
-    data = request.get_json()
-    print("Received data:", data)
-
-    # Normalize headers
-    headers = [h.strip() for h in sheet.row_values(1)]
-    new_row = [data.get(col.strip(), "") for col in headers]
-    print("Row to append:", new_row)
-    print(headers)
-
     try:
-        next_row = next_available_row_by_column(sheet, 2)
-        col_count = len(headers)
-        start_cell = rowcol_to_a1(next_row, 1)  # Start from column B
-        end_cell = rowcol_to_a1(next_row, col_count + 1)
-        range_to_update = f"{start_cell}:{end_cell}"
+        data = request.get_json()
+        if not data:
+            return jsonify({"status": "error", "message": "No data received"})
 
-        sheet.update(range_to_update, [new_row])
-        print(f"✅ Row written directly to row {next_row} ({range_to_update})")
+        # Append to master sheet
+        date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        data["timestamp"] = date
+
+        # Convert dict to list of values matching header order
+        headers = sheet.row_values(1)
+        row_values = [data.get(h, "") for h in headers]
+        sheet.append_row(row_values, value_input_option="USER_ENTERED")
+
+        # Create a summary sheet
+        create_summary(data)
     except Exception as e:
         print("❌ Google Sheets error:", e)
         return jsonify({"status": "error", "message": str(e)})
